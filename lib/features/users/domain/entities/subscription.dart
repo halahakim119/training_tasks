@@ -8,4 +8,7 @@ class Subscription {
       required this.status,
       required this.paymentMethod,
       required this.term});
+
+  
+  
 }
