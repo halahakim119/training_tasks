@@ -44,9 +44,9 @@ class Home extends StatelessWidget {
                               Text(
                                   'phone number ${state.user[index].phoneNumber}'),
                               Text(
-                                  'street address ${state.user[index].address!.streetAddress}'),
+                                  'street address ${state.user[index].address.streetAddress}'),
                               Text(
-                                  'Credit Card number ${state.user[index].creditCard!.ccNumber}'),
+                                  'Credit Card number ${state.user[index].creditCard.ccNumber}'),
                             ],
                           ),
                         )

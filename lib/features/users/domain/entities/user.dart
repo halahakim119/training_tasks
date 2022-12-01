@@ -6,40 +6,40 @@ import 'package:training_tasks/features/users/domain/entities/employement.dart';
 import 'package:training_tasks/features/users/domain/entities/subscription.dart';
 
 class User extends Equatable {
-  final int? id;
-  final String? uid;
-  final String? password;
-  final String? firstName;
-  final String? lastName;
-  final String? username;
-  final String? email;
-  final String? avatar;
-  final String? gender;
-  final String? phoneNumber;
-  final String? socialInsuranceNumber;
-  final String? dateOfBirth;
-  final Employment? employment;
-  final Address? address;
-  final CreditCard? creditCard;
-  final Subscription? subscription;
+  final int id;
+  final String uid;
+  final String password;
+  final String firstName;
+  final String lastName;
+  final String username;
+  final String email;
+  final String avatar;
+  final String gender;
+  final String phoneNumber;
+  final String socialInsuranceNumber;
+  final String dateOfBirth;
+  final Employment employment;
+  final Address address;
+  final CreditCard creditCard;
+  final Subscription subscription;
 
-  User({
-    this.id,
-    this.uid,
-    this.password,
-    this.firstName,
-    this.lastName,
-    this.username,
-    this.email,
-    this.avatar,
-    this.gender,
-    this.phoneNumber,
-    this.socialInsuranceNumber,
-    this.dateOfBirth,
-    this.employment,
-    this.address,
-    this.creditCard,
-    this.subscription,
+  const User({
+    required this.id,
+    required this.uid,
+    required this.password,
+    required this.firstName,
+    required this.lastName,
+    required this.username,
+    required this.email,
+    required this.avatar,
+    required this.gender,
+    required this.phoneNumber,
+    required this.socialInsuranceNumber,
+    required this.dateOfBirth,
+    required this.employment,
+    required this.address,
+    required this.creditCard,
+    required this.subscription,
   });
 
   @override

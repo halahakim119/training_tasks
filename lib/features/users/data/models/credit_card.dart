@@ -1,36 +1,14 @@
+import 'package:training_tasks/features/users/domain/entities/credit_cart.dart'
+    as CreditCardEntity;
 
-class CreditCard {
-  final String? ccNumber;
-  const CreditCard({this.ccNumber});
-  CreditCard copyWith({String? ccNumber}) {
-    return CreditCard(ccNumber: ccNumber ?? this.ccNumber);
-  }
+class CreditCard extends CreditCardEntity.CreditCard {
+  const CreditCard({required String ccNumber}) : super(ccNumber: ccNumber);
 
-  Map<String, Object?> toJson() {
+  Map<String, dynamic> toJson() {
     return {'cc_number': ccNumber};
   }
 
-  factory CreditCard.fromJson(Map<String, Object?> json) {
-    return CreditCard(
-        ccNumber: json['cc_number'] == null ? null : json['cc_number'] as String);
-  }
-
-  @override
-  String toString() {
-    return '''CreditCard(
-                cc_number:$ccNumber
-    ) ''';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return other is CreditCard &&
-        other.runtimeType == runtimeType &&
-        other.ccNumber == ccNumber;
-  }
-
-  @override
-  int get hashCode {
-    return Object.hash(runtimeType, ccNumber);
+  factory CreditCard.fromJson(Map<String, dynamic> json) {
+    return CreditCard(ccNumber: json['cc_number']);
   }
 }

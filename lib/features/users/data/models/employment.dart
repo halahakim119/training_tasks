@@ -1,43 +1,15 @@
+import 'package:training_tasks/features/users/domain/entities/employement.dart'
+    as EmploymentEntity;
 
-class Employment {
-  final String? title;
-  final String? keySkill;
-  const Employment({this.title, this.keySkill});
-  Employment copyWith({String? title, String? keySkill}) {
-    return Employment(
-        title: title ?? this.title, keySkill: keySkill ?? this.keySkill);
-  }
+class Employment extends EmploymentEntity.Employment {
+  const Employment({required String title, required String keySkill})
+      : super(title: title, keySkill: keySkill);
 
-  Map<String, Object?> toJson() {
+  Map<String, dynamic> toJson() {
     return {'title': title, 'key_skill': keySkill};
   }
 
-  factory Employment.fromJson(Map<String, Object?> json) {
-    return Employment(
-        title: json['title'] == null ? null : json['title'] as String,
-        keySkill: json['key_skill'] == null ? null : json['key_skill'] as String);
-  }
-
-  @override
-  String toString() {
-    return '''Employment(
-                title:$title,
-key_skill:$keySkill
-    ) ''';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return other is Employment &&
-        other.runtimeType == runtimeType &&
-        other.title == title &&
-        other.keySkill == keySkill;
-  }
-
-  @override
-  int get hashCode {
-    return Object.hash(runtimeType, title, keySkill);
+  factory Employment.fromJson(Map<String, dynamic> json) {
+    return Employment(title: json['title'], keySkill: json['key_skill']);
   }
 }
-
-
