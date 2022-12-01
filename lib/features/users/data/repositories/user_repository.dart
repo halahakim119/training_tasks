@@ -4,7 +4,7 @@ import 'package:http/http.dart' as http;
 import 'dart:async';
 import 'dart:convert';
 
-import 'package:training_tasks/features/users/data/models/user_model.dart';
+import 'package:training_tasks/features/users/data/models/user.dart';
 
 
 

@@ -1,7 +1,7 @@
 import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
 import 'package:meta/meta.dart';
-import '../../data/models/user_model.dart';
+import '../../data/models/user.dart';
 import '../../data/repositories/user_repository.dart';
 
 part 'user_event.dart';
