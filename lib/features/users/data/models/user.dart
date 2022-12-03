@@ -77,9 +77,9 @@ class User extends UserEntity.User {
         phoneNumber: json['phone_number'] as String,
         socialInsuranceNumber: json['social_insurance_number'] as String,
         dateOfBirth: json['date_of_birth'] as String,
-        employment: json['employment'],
-        address: json['address'],
-        creditCard: json['credit_card'],
-        subscription: json['subscription']);
+        employment: Employment.fromJson(json['employment'] as Map<String, dynamic>),
+        address:  Address.fromJson(json['address'] as Map<String, dynamic>),
+        creditCard:  CreditCard.fromJson(json['credit_card']as Map<String, dynamic>),
+        subscription: Subscription.fromJson(json['subscription']as Map<String, dynamic>));
   }
 }

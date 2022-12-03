@@ -2,6 +2,8 @@ import 'package:training_tasks/features/users/data/models/coordinates.dart';
 
 import 'package:training_tasks/features/users/domain/entities/address.dart'
     as AddressEntity;
+import 'package:training_tasks/features/users/domain/entities/coordinates.dart'
+    as CoordinatesEntity;
 
 class Address extends AddressEntity.Address {
   const Address(
@@ -41,6 +43,7 @@ class Address extends AddressEntity.Address {
         zipCode: json['zip_code'],
         state: json['state'],
         country: json['country'],
-        coordinates: json['coordinates']);
+        coordinates:
+            Coordinates.fromJson(json['coordinates'] as Map<String, dynamic>));
   }
 }

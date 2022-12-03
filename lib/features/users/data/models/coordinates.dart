@@ -9,7 +9,7 @@ class Coordinates extends CoordinatesEntity.Coordinates {
     return {'lat': lat, 'lng': lng};
   }
 
-  static Coordinates fromJson(Map<String, dynamic> json) {
-    return Coordinates(lat: json['lat'], lng: json['lng']);
+  factory Coordinates.fromJson(Map<String, dynamic> json) {
+    return Coordinates(lat: json['lat'] as double, lng: json['lng'] as double);
   }
 }

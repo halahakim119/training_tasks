@@ -9,12 +9,11 @@ class Address {
   final String country;
   final Coordinates coordinates;
   const Address(
-      { required this.city,
+      {required this.city,
       required this.streetName,
       required this.streetAddress,
       required this.zipCode,
       required this.state,
       required this.country,
       required this.coordinates});
-
 }
