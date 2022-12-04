@@ -1,10 +1,8 @@
 import 'dart:async';
-import 'dart:convert';
-import 'package:http/http.dart' as http;
+
 import 'package:dartz/dartz.dart';
 import 'package:training_tasks/core/error/exception.dart';
 import 'package:training_tasks/core/network/network_info.dart';
-import 'package:training_tasks/core/strings/strings.dart';
 
 import 'package:training_tasks/core/error/failure.dart';
 import 'package:training_tasks/features/users/data/datasources/user_local_data_source.dart';
@@ -14,20 +12,6 @@ import 'package:training_tasks/features/users/data/models/user.dart';
 import 'package:training_tasks/features/users/domain/repositories/user_repository.dart'
     as DomainRepo;
 
-// class UserRepository implements DomainRepo.UserRepository {
-//   @override
-//   Future<Either<Failure, List<User>>> getData() async {
-//     final response = await http.get(Uri.parse(BASE_URL));
-//     print(response);
-//     try {
-//       final parsed = jsonDecode(response.body).cast<Map<String, dynamic>>();
-//       final result = parsed.map<User>((json) => User.fromJson(json)).toList();
-//       return Right(result);
-//     } on ServerException {
-//       return Left(ServerFailure());
-//     }
-//   }
-// }
 
 class UserRepository implements DomainRepo.UserRepository {
   final UserRemoteDataSource remoteDataSource;

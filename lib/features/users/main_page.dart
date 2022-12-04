@@ -10,7 +10,7 @@ import 'package:training_tasks/features/users/data/datasources/user_remote_data_
 import 'package:training_tasks/features/users/data/repositories/user_repository.dart';
 import 'package:training_tasks/features/users/domain/usecases/get_data_usecase.dart';
 import 'package:training_tasks/features/users/presentation/bloc/user_bloc.dart';
-import 'package:training_tasks/features/users/presentation/pages/users.page.dart';
+import 'package:training_tasks/features/users/presentation/pages/users_page.dart';
 
 void main() async {
    SharedPreferences sharedPreferences= await SharedPreferences.getInstance();

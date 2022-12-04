@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:training_tasks/features/users/presentation/bloc/user_bloc.dart';
+import 'package:training_tasks/features/users/presentation/widgets/message_display_widget.dart';
+import 'package:training_tasks/features/users/presentation/widgets/user_widget.dart';
 
 class UsersPage extends StatelessWidget {
   const UsersPage({super.key});
@@ -31,29 +33,13 @@ class UsersPage extends StatelessWidget {
               child: ListView.builder(
                 shrinkWrap: true,
                 itemBuilder: (context, index) {
-                  return ExpansionTile(
-                    title: Text(
-                      ' user ${state.user[index].id}',
-                    ),
-                    children: [
-                      Padding(
-                        padding: const EdgeInsets.all(5),
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Text(
-                                'Name: ${state.user[index].firstName} ${state.user[index].lastName} '),
-                            Text(
-                                'phone number ${state.user[index].phoneNumber}'),
-                            Text(
-                                'street address ${state.user[index].address.streetAddress}'),
-                            Text(
-                                'Credit Card number ${state.user[index].creditCard.ccNumber}'),
-                          ],
-                        ),
-                      )
-                    ],
+                  return UserWidget(
+                    id: state.user[index].id,
+                    firstName: state.user[index].firstName,
+                    lastName: state.user[index].lastName,
+                    phoneNumber: state.user[index].phoneNumber,
+                    streetAddress: state.user[index].address.streetAddress,
+                    creditCardNumber: state.user[index].creditCard.ccNumber,
                   );
                 },
                 itemCount: state.user.length,
@@ -62,7 +48,7 @@ class UsersPage extends StatelessWidget {
           }
           if (state is userErrorState) {
             return Center(
-              child: Text(state.error.toString()),
+              child: MessageDisplayWidget(message: state.error),
             );
           }
           return const Center(child: Text('h'));
