@@ -9,5 +9,6 @@ class GetDataUsecase {
 
   Future<Either<Failure, List<User>>> call() async {
     return await repository.getData();
+
   }
 }

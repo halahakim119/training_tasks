@@ -1,8 +1,7 @@
-
 part of 'user_bloc.dart';
 
 @immutable
-abstract class UserState extends Equatable{}
+abstract class UserState extends Equatable {}
 
 class UserLoadingState extends UserState {
   @override
@@ -15,7 +14,7 @@ class UserLoadedState extends UserState {
   UserLoadedState(this.user);
 
   @override
-  List<User?> get props => user;
+  List<User> get props => user;
 }
 
 class userErrorState extends UserState {
@@ -24,5 +23,5 @@ class userErrorState extends UserState {
   userErrorState(this.error);
 
   @override
-  List<User?> get props => error as List<User>;
+  List<User> get props => error as List<User>;
 }

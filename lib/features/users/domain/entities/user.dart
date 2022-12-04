@@ -1,5 +1,5 @@
 import 'package:equatable/equatable.dart';
-import 'package:meta/meta.dart';
+
 import 'package:training_tasks/features/users/domain/entities/address.dart';
 import 'package:training_tasks/features/users/domain/entities/credit_cart.dart';
 import 'package:training_tasks/features/users/domain/entities/employement.dart';
