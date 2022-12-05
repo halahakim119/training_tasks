@@ -6,7 +6,7 @@ import 'package:training_tasks/core/error/failure.dart';
 import 'package:training_tasks/features/cars/data/models/cars_model.dart';
 import 'package:training_tasks/features/cars/domain/usecases/get_cars_data_usecase.dart';
 
-import '../../../../core/strings/strings.dart';
+import '../../../../../core/strings/strings.dart';
 
 part 'cars_event.dart';
 part 'cars_state.dart';
@@ -17,9 +17,9 @@ class CarsBloc extends Bloc<CarsEvent, CarsState> {
   CarsBloc({required this.getData}) : super(CarsLoadingState()) {
     on<LoadCarsEvent>((event, emit) async {
       emit(CarsLoadingState());
-      final failureOrUser = await getData();
+      final failureOrCars = await getData();
       emit(_mapFailureOrCarsToState(
-          failureOrUser as Either<Failure, CarsModel>));
+          failureOrCars as Either<Failure, CarsModel>));
     });
   }
 

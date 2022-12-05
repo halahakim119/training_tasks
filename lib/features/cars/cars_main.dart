@@ -8,8 +8,9 @@ import 'package:training_tasks/features/cars/data/datasources/cars_remote_data_s
 import 'package:training_tasks/features/cars/data/repositories/cars_repository.dart';
 
 import 'package:training_tasks/features/cars/domain/usecases/get_cars_data_usecase.dart';
-import 'package:training_tasks/features/cars/presentation/bloc/cars_bloc.dart';
-import 'package:training_tasks/features/cars/presentation/pages/cars_pages.dart';
+import 'package:training_tasks/features/cars/presentation/logic/bloc/cars_bloc.dart';
+
+import 'package:training_tasks/features/cars/presentation/view/pages/cars_pages.dart';
 
 import 'data/datasources/cars_local_data_source.dart';
 
