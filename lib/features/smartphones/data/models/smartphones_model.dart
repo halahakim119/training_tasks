@@ -6,9 +6,8 @@ class SmartphonesModel extends SmartphonesEntity {
       : super(products: products);
 
   Map<String, Object?> toJson() {
-    return {
-      'products': products,
-    };
+    ProductsModel? products;
+    return {'products': products?.toJson()};
   }
 
   static SmartphonesModel fromJson(Map<String, dynamic> json) {

@@ -43,6 +43,10 @@ class User extends UserEntity.User {
             subscription: subscription);
 
   Map<String, dynamic> toJson() {
+    Employment? employment;
+    Address? address;
+    CreditCard? creditCard;
+    Subscription? subscription;
     return {
       'id': id,
       'uid': uid,
@@ -56,10 +60,10 @@ class User extends UserEntity.User {
       'phone_number': phoneNumber,
       'social_insurance_number': socialInsuranceNumber,
       'date_of_birth': dateOfBirth,
-      'employment': employment,
-      'address': address,
-      'credit_card': creditCard,
-      'subscription': subscription
+      'employment': employment?.toJson(),
+      'address': address?.toJson(),
+      'credit_card': creditCard?.toJson(),
+      'subscription': subscription?.toJson()
     };
   }
 
@@ -77,9 +81,12 @@ class User extends UserEntity.User {
         phoneNumber: json['phone_number'] as String,
         socialInsuranceNumber: json['social_insurance_number'] as String,
         dateOfBirth: json['date_of_birth'] as String,
-        employment: Employment.fromJson(json['employment'] as Map<String, dynamic>),
-        address:  Address.fromJson(json['address'] as Map<String, dynamic>),
-        creditCard:  CreditCard.fromJson(json['credit_card']as Map<String, dynamic>),
-        subscription: Subscription.fromJson(json['subscription']as Map<String, dynamic>));
+        employment:
+            Employment.fromJson(json['employment'] as Map<String, dynamic>),
+        address: Address.fromJson(json['address'] as Map<String, dynamic>),
+        creditCard:
+            CreditCard.fromJson(json['credit_card'] as Map<String, dynamic>),
+        subscription: Subscription.fromJson(
+            json['subscription'] as Map<String, dynamic>));
   }
 }

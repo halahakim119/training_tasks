@@ -5,9 +5,8 @@ class CarsModel extends CarsEntity {
   const CarsModel({List<CarsListModel>? cars}) : super(cars: cars);
 
   Map<String, Object?> toJson() {
-    return {
-      'cars': cars
-    };
+    CarsModel? cars;
+    return {'cars': cars?.toJson()};
   }
 
   factory CarsModel.fromJson(Map<String, Object?> json) {
