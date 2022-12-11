@@ -5,8 +5,10 @@ class CarsModel extends CarsEntity {
   const CarsModel({List<CarsListModel>? cars}) : super(cars: cars);
 
   Map<String, Object?> toJson() {
-    CarsModel? cars;
-    return {'cars': cars?.toJson()};
+    List<CarsListModel>? cars;
+    return {
+      'cars': cars?..map<Map<String, dynamic>>((data) => data.toJson()).toList()
+    };
   }
 
   factory CarsModel.fromJson(Map<String, Object?> json) {

@@ -5,16 +5,16 @@ abstract class CarsState extends Equatable {}
 
 class CarsLoadingState extends CarsState {
   @override
-  List<CarsModel?> get props => [];
+  List<CarsEntity?> get props => [];
 }
 
 class CarsLoadedState extends CarsState {
-  final CarsModel cars;
+  final CarsEntity cars;
 
   CarsLoadedState(this.cars);
 
   @override
-  List<CarsModel?> get props => [cars];
+  List<CarsEntity?> get props => [cars];
 }
 
 class carsErrorState extends CarsState {
@@ -23,5 +23,5 @@ class carsErrorState extends CarsState {
   carsErrorState(this.error);
 
   @override
-  List<CarsModel?> get props => error as List<CarsModel>;
+  List<CarsEntity?> get props => error as List<CarsEntity>;
 }

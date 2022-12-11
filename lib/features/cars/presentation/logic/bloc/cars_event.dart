@@ -7,5 +7,5 @@ abstract class CarsEvent extends Equatable {
 
 class LoadCarsEvent extends CarsEvent {
   @override
-  List<CarsModel?> get props => [];
+  List<CarsEntity?> get props => [];
 }

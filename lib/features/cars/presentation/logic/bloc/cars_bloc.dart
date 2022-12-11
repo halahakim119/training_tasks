@@ -3,7 +3,8 @@ import 'package:dartz/dartz.dart';
 import 'package:equatable/equatable.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:training_tasks/core/error/failure.dart';
-import 'package:training_tasks/features/cars/data/models/cars_model.dart';
+
+import 'package:training_tasks/features/cars/domain/entities/cars_entity.dart';
 import 'package:training_tasks/features/cars/domain/usecases/get_cars_data_usecase.dart';
 
 import '../../../../../core/strings/strings.dart';
@@ -19,11 +20,11 @@ class CarsBloc extends Bloc<CarsEvent, CarsState> {
       emit(CarsLoadingState());
       final failureOrCars = await getData();
       emit(_mapFailureOrCarsToState(
-          failureOrCars as Either<Failure, CarsModel>));
+          failureOrCars as Either<Failure, CarsEntity>));
     });
   }
 
-  CarsState _mapFailureOrCarsToState(Either<Failure, CarsModel> either) {
+  CarsState _mapFailureOrCarsToState(Either<Failure, CarsEntity> either) {
     return either.fold(
         (failure) => carsErrorState(_mapFailureToMessage(failure)),
         (carsData) => CarsLoadedState(carsData));

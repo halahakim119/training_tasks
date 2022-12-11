@@ -1,6 +1,7 @@
 import 'package:bloc/bloc.dart';
 import 'package:dartz/dartz.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:training_tasks/features/smartphones/domain/entities/smartphones_entity.dart';
 import 'package:training_tasks/features/smartphones/domain/usecases/get_smartphones_data_usecase.dart';
 import 'dart:async';
 import '../../../../../core/error/failure.dart';
@@ -19,12 +20,12 @@ class SmartphonesCubit extends Cubit<SmartphonesState> {
     emit(SmartphonesState.loading());
     final failureOrCars = await getData();
     emit(_mapFailureOrCarsToState(
-        failureOrCars as Either<Failure, SmartphonesModel>));
+        failureOrCars as Either<Failure, SmartphonesEntity>));
   }
 }
 
 SmartphonesState _mapFailureOrCarsToState(
-    Either<Failure, SmartphonesModel> either) {
+    Either<Failure, SmartphonesEntity> either) {
   return either.fold(
       (failure) => SmartphonesState.error(_mapFailureToMessage(failure)),
       (carsData) => SmartphonesState.loaded(carsData));

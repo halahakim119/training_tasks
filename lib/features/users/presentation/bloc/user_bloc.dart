@@ -4,8 +4,9 @@ import 'package:equatable/equatable.dart';
 import 'package:meta/meta.dart';
 import 'package:training_tasks/core/error/failure.dart';
 import 'package:training_tasks/core/strings/strings.dart';
+import 'package:training_tasks/features/users/domain/entities/user.dart';
+
 import 'package:training_tasks/features/users/domain/usecases/get_data_usecase.dart';
-import '../../data/models/user.dart';
 
 part 'user_event.dart';
 part 'user_state.dart';
