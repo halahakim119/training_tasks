@@ -1,6 +1,7 @@
+import 'package:equatable/equatable.dart';
 import 'package:training_tasks/features/users/domain/entities/coordinates.dart';
 
-class Address {
+class Address extends Equatable {
   final String city;
   final String streetName;
   final String streetAddress;
@@ -16,4 +17,8 @@ class Address {
       required this.state,
       required this.country,
       required this.coordinates});
+
+  @override
+  List<Object?> get props =>
+      [city, state, streetAddress, streetName, zipCode, coordinates, country];
 }

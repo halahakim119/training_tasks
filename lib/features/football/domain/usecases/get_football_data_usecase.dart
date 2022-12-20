@@ -1,7 +1,8 @@
 import 'package:dartz/dartz.dart';
-import 'package:training_tasks/core/error/failure.dart';
-import 'package:training_tasks/features/football/domain/entities/football_main_entity.dart';
-import 'package:training_tasks/features/football/domain/repositories/football_repository_domain.dart';
+
+import '../../../../core/error/failure.dart';
+import '../entities/football_main_entity.dart';
+import '../repositories/football_repository_domain.dart';
 
 class GetFootballDataUsecase {
   final FootballRepositoryDomain footballRepositoryDomain;

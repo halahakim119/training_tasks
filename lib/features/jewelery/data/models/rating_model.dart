@@ -1,4 +1,4 @@
-import 'package:training_tasks/features/jewelery/domain/entities/rating_entity.dart';
+import '../../domain/entities/rating_entity.dart';
 
 class RatingModel extends RatingEntity {
   const RatingModel({num? rate, int? count}) : super(rate: rate, count: count);

@@ -5,7 +5,7 @@ import 'package:training_tasks/features/users/domain/entities/credit_cart.dart';
 import 'package:training_tasks/features/users/domain/entities/employement.dart';
 import 'package:training_tasks/features/users/domain/entities/subscription.dart';
 
-class User extends Equatable {
+class UsersEntity extends Equatable {
   final int id;
   final String uid;
   final String password;
@@ -23,7 +23,7 @@ class User extends Equatable {
   final CreditCard creditCard;
   final Subscription subscription;
 
-  const User({
+  const UsersEntity({
     required this.id,
     required this.uid,
     required this.password,

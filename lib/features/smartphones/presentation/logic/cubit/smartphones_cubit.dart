@@ -1,15 +1,14 @@
 import 'package:bloc/bloc.dart';
 import 'package:dartz/dartz.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:training_tasks/features/smartphones/domain/entities/smartphones_entity.dart';
-import 'package:training_tasks/features/smartphones/domain/usecases/get_smartphones_data_usecase.dart';
-import 'dart:async';
+
 import '../../../../../core/error/failure.dart';
 import '../../../../../core/strings/strings.dart';
-import '../../../data/models/smartphones_model.dart';
+import '../../../domain/entities/smartphones_entity.dart';
+import '../../../domain/usecases/get_smartphones_data_usecase.dart';
 
-part 'smartphones_state.dart';
 part 'smartphones_cubit.freezed.dart';
+part 'smartphones_state.dart';
 
 class SmartphonesCubit extends Cubit<SmartphonesState> {
   final GetSmartphonesDataUsecase getData;
@@ -35,10 +34,7 @@ String _mapFailureToMessage(Failure failure) {
   switch (failure.runtimeType) {
     case ServerFailure:
       return SERVER_FAILURE_MESSAGE;
-    case EmptyCacheFailure:
-      return EMPTY_CACHE_FAILURE_MESSAGE;
-    case OfflineFailure:
-      return OFFLINE_FAILURE_MESSAGE;
+
     default:
       return "Unexpected Error , Please try again later .";
   }

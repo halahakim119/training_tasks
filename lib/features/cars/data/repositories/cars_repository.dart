@@ -1,48 +1,25 @@
 import 'dart:async';
 
 import 'package:dartz/dartz.dart';
-import 'package:training_tasks/core/error/exception.dart';
-import 'package:training_tasks/core/network/network_info.dart';
-
-import 'package:training_tasks/core/error/failure.dart';
-import 'package:training_tasks/features/cars/data/datasources/cars_local_data_source.dart';
-import 'package:training_tasks/features/cars/data/datasources/cars_remote_data_source.dart';
-import 'package:training_tasks/features/cars/data/models/cars_model.dart';
-
 import 'package:training_tasks/features/cars/domain/repositories/cars_repository.dart'
     as domain;
 
+import '../../../../core/error/exception.dart';
+import '../../../../core/error/failure.dart';
 import '../../domain/entities/cars_entity.dart';
+import '../datasources/cars_data_source.dart';
 
 class CarsRepository implements domain.CarsRepository {
-  final CarsRemoteDataSource remoteDataSource;
-  final CarsLocalDataSource localDataSource;
-  final NetworkInfo networkInfo;
+  final CarsDataSource carsDataSource;
 
-  CarsRepository(
-      {required this.remoteDataSource,
-      required this.localDataSource,
-      required this.networkInfo});
-
+  CarsRepository({required this.carsDataSource});
   @override
-  Future<Either<Failure, CarsModel>> getCarsData() async {
-    if (await networkInfo.isConnected) {
-      print('u r online');
-      try {
-        final remoteCars = await remoteDataSource.getAllCars();
-        localDataSource.cacheCars(remoteCars);
-        return Right(remoteCars);
-      } on ServerException {
-        return Left(ServerFailure());
-      }
-    } else {
-      try {
-        print('u r offonline');
-        final localCarss = await localDataSource.getCachedCars();
-        return Right(localCarss);
-      } on EmptyCacheException {
-        return Left(EmptyCacheFailure());
-      }
+  Future<Either<Failure, CarsEntity>> getCarsData() async {
+    try {
+      final result = await carsDataSource.getCars();
+      return Right(result);
+    } on ServerException {
+      return Left(ServerFailure());
     }
   }
 }

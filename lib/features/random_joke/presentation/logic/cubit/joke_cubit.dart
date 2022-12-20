@@ -1,28 +1,33 @@
 import 'package:bloc/bloc.dart';
-
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:training_tasks/features/random_joke/data/models/random_joke.dart';
+import 'package:training_tasks/features/random_joke/domain/entities/random_joke_entity.dart';
 
-import 'dart:async';
+import '../../../../../core/error/failure.dart';
+import '../../../../../core/strings/strings.dart';
+import '../../../domain/usecases/randome_joke_usecase.dart';
 
-import 'package:training_tasks/features/random_joke/data/network/joke_repo.dart';
-
-
-part 'joke_state.dart';
 part 'joke_cubit.freezed.dart';
+part 'joke_state.dart';
 
 class JokeCubit extends Cubit<JokeState> {
-  JokeRepo repo;
-  JokeCubit({required this.repo}) : super(JokeState.loading());
+  final GetAllJokesDataUsecase getData;
+  JokeCubit({required this.getData}) : super(JokeState.loading());
 
   void fetchData() async {
     emit(JokeState.loading());
+    final failureOrJokes = await getData();
+    emit(failureOrJokes.fold(
+        (failure) => JokeState.error(_mapFailureToMessage(failure)),
+        (data) => JokeState.loaded(data)));
+  }
+}
 
-    try {
-      final data = await repo.getJoke();
-      emit(JokeState.loaded(data));
-    } catch (e) {
-      emit(JokeState.error(e.toString()));
-    }
+String _mapFailureToMessage(Failure failure) {
+  switch (failure.runtimeType) {
+    case ServerFailure:
+      return SERVER_FAILURE_MESSAGE;
+
+    default:
+      return "Unexpected Error , Please try again later .";
   }
 }

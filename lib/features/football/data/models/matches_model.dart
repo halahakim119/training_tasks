@@ -1,5 +1,6 @@
-import 'package:training_tasks/features/football/domain/entities/matches_entity.dart';
 import 'dart:core';
+
+import '../../domain/entities/matches_entity.dart';
 
 class MatchesModel extends MatchesEntity {
   const MatchesModel({

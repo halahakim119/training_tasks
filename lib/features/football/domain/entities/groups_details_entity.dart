@@ -1,5 +1,6 @@
 import 'package:equatable/equatable.dart';
-import 'package:training_tasks/features/football/domain/entities/matches_entity.dart';
+
+import 'matches_entity.dart';
 
 class GroupsDetailsEntity extends Equatable {
   final String? name;

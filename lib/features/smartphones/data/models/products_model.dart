@@ -1,5 +1,6 @@
 import 'package:dartz/dartz.dart';
-import 'package:training_tasks/features/smartphones/domain/entities/products_entity.dart';
+
+import '../../domain/entities/products_entity.dart';
 
 class ProductsModel extends ProductsEntity {
   const ProductsModel(

@@ -19,21 +19,21 @@ mixin _$JokeState {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() loading,
-    required TResult Function(RandomJoke joke) loaded,
+    required TResult Function(RandomJokeEntity joke) loaded,
     required TResult Function(String error) error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? loading,
-    TResult? Function(RandomJoke joke)? loaded,
+    TResult? Function(RandomJokeEntity joke)? loaded,
     TResult? Function(String error)? error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? loading,
-    TResult Function(RandomJoke joke)? loaded,
+    TResult Function(RandomJokeEntity joke)? loaded,
     TResult Function(String error)? error,
     required TResult orElse(),
   }) =>
@@ -117,7 +117,7 @@ class _$_Loading implements _Loading {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() loading,
-    required TResult Function(RandomJoke joke) loaded,
+    required TResult Function(RandomJokeEntity joke) loaded,
     required TResult Function(String error) error,
   }) {
     return loading();
@@ -127,7 +127,7 @@ class _$_Loading implements _Loading {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? loading,
-    TResult? Function(RandomJoke joke)? loaded,
+    TResult? Function(RandomJokeEntity joke)? loaded,
     TResult? Function(String error)? error,
   }) {
     return loading?.call();
@@ -137,7 +137,7 @@ class _$_Loading implements _Loading {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? loading,
-    TResult Function(RandomJoke joke)? loaded,
+    TResult Function(RandomJokeEntity joke)? loaded,
     TResult Function(String error)? error,
     required TResult orElse(),
   }) {
@@ -191,7 +191,7 @@ abstract class _$$_LoadedCopyWith<$Res> {
   factory _$$_LoadedCopyWith(_$_Loaded value, $Res Function(_$_Loaded) then) =
       __$$_LoadedCopyWithImpl<$Res>;
   @useResult
-  $Res call({RandomJoke joke});
+  $Res call({RandomJokeEntity joke});
 }
 
 /// @nodoc
@@ -210,7 +210,7 @@ class __$$_LoadedCopyWithImpl<$Res>
       null == joke
           ? _value.joke
           : joke // ignore: cast_nullable_to_non_nullable
-              as RandomJoke,
+              as RandomJokeEntity,
     ));
   }
 }
@@ -221,7 +221,7 @@ class _$_Loaded implements _Loaded {
   const _$_Loaded(this.joke);
 
   @override
-  final RandomJoke joke;
+  final RandomJokeEntity joke;
 
   @override
   String toString() {
@@ -233,11 +233,12 @@ class _$_Loaded implements _Loaded {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_Loaded &&
-            (identical(other.joke, joke) || other.joke == joke));
+            const DeepCollectionEquality().equals(other.joke, joke));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, joke);
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(joke));
 
   @JsonKey(ignore: true)
   @override
@@ -249,7 +250,7 @@ class _$_Loaded implements _Loaded {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() loading,
-    required TResult Function(RandomJoke joke) loaded,
+    required TResult Function(RandomJokeEntity joke) loaded,
     required TResult Function(String error) error,
   }) {
     return loaded(joke);
@@ -259,7 +260,7 @@ class _$_Loaded implements _Loaded {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? loading,
-    TResult? Function(RandomJoke joke)? loaded,
+    TResult? Function(RandomJokeEntity joke)? loaded,
     TResult? Function(String error)? error,
   }) {
     return loaded?.call(joke);
@@ -269,7 +270,7 @@ class _$_Loaded implements _Loaded {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? loading,
-    TResult Function(RandomJoke joke)? loaded,
+    TResult Function(RandomJokeEntity joke)? loaded,
     TResult Function(String error)? error,
     required TResult orElse(),
   }) {
@@ -315,9 +316,9 @@ class _$_Loaded implements _Loaded {
 }
 
 abstract class _Loaded implements JokeState {
-  const factory _Loaded(final RandomJoke joke) = _$_Loaded;
+  const factory _Loaded(final RandomJokeEntity joke) = _$_Loaded;
 
-  RandomJoke get joke;
+  RandomJokeEntity get joke;
   @JsonKey(ignore: true)
   _$$_LoadedCopyWith<_$_Loaded> get copyWith =>
       throw _privateConstructorUsedError;
@@ -386,7 +387,7 @@ class _$_Error implements _Error {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() loading,
-    required TResult Function(RandomJoke joke) loaded,
+    required TResult Function(RandomJokeEntity joke) loaded,
     required TResult Function(String error) error,
   }) {
     return error(this.error);
@@ -396,7 +397,7 @@ class _$_Error implements _Error {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? loading,
-    TResult? Function(RandomJoke joke)? loaded,
+    TResult? Function(RandomJokeEntity joke)? loaded,
     TResult? Function(String error)? error,
   }) {
     return error?.call(this.error);
@@ -406,7 +407,7 @@ class _$_Error implements _Error {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? loading,
-    TResult Function(RandomJoke joke)? loaded,
+    TResult Function(RandomJokeEntity joke)? loaded,
     TResult Function(String error)? error,
     required TResult orElse(),
   }) {

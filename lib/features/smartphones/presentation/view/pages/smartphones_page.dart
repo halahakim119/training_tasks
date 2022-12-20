@@ -1,10 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import 'dart:math' as math;
-
-import 'package:training_tasks/features/smartphones/presentation/logic/cubit/smartphones_cubit.dart';
-import 'package:training_tasks/features/smartphones/presentation/view/widgets/all_smartphones_widget.dart';
+import '../../logic/cubit/smartphones_cubit.dart';
+import '../widgets/all_smartphones_widget.dart';
 
 class SmartphonesPage extends StatelessWidget {
   @override

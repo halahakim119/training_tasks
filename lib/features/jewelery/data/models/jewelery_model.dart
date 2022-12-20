@@ -1,5 +1,5 @@
-import 'package:training_tasks/features/jewelery/data/models/rating_model.dart';
-import 'package:training_tasks/features/jewelery/domain/entities/jewelery_entity.dart';
+import '../../domain/entities/jewelery_entity.dart';
+import 'rating_model.dart';
 
 class JeweleryModel extends JeweleryEntity {
   const JeweleryModel(

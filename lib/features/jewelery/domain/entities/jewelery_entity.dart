@@ -1,5 +1,6 @@
 import 'package:equatable/equatable.dart';
-import 'package:training_tasks/features/jewelery/domain/entities/rating_entity.dart';
+
+import 'rating_entity.dart';
 
 class JeweleryEntity extends Equatable {
   final int? id;

@@ -1,4 +1,4 @@
-import 'package:training_tasks/features/football/domain/entities/tvchannels_entity.dart';
+import '../../domain/entities/tvchannels_entity.dart';
 
 class TvchannelsModel extends TvchannelsEntity {
   const TvchannelsModel({

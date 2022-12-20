@@ -1,7 +1,8 @@
 import 'package:dartz/dartz.dart';
-import 'package:training_tasks/core/error/failure.dart';
-import 'package:training_tasks/features/smartphones/domain/entities/smartphones_entity.dart';
-import 'package:training_tasks/features/smartphones/domain/repositories/smartphones_repository.dart';
+
+import '../../../../core/error/failure.dart';
+import '../entities/smartphones_entity.dart';
+import '../repositories/smartphones_repository.dart';
 
 class GetSmartphonesDataUsecase {
   final SmartphonesRepository smartphonesRepository;

@@ -1,9 +1,10 @@
 import 'package:equatable/equatable.dart';
-import 'package:training_tasks/features/football/domain/entities/groups_entity.dart';
-import 'package:training_tasks/features/football/domain/entities/knockout_entity.dart';
-import 'package:training_tasks/features/football/domain/entities/stadiums_entity.dart';
-import 'package:training_tasks/features/football/domain/entities/teams_entity.dart';
-import 'package:training_tasks/features/football/domain/entities/tvchannels_entity.dart';
+
+import 'groups_entity.dart';
+import 'knockout_entity.dart';
+import 'stadiums_entity.dart';
+import 'teams_entity.dart';
+import 'tvchannels_entity.dart';
 
 class FootballEntity extends Equatable {
   final List<StadiumsEntity>? stadiums;

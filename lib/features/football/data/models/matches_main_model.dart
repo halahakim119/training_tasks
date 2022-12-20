@@ -1,4 +1,4 @@
-import 'package:training_tasks/features/football/domain/entities/matches_main_entity.dart';
+import '../../domain/entities/matches_main_entity.dart';
 
 class MatchesMainModel extends MatchesMainEntity {
   const MatchesMainModel({

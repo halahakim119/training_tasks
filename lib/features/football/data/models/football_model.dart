@@ -1,9 +1,9 @@
-import 'package:training_tasks/features/football/data/models/groups_model.dart';
-import 'package:training_tasks/features/football/data/models/knockout_model.dart';
-import 'package:training_tasks/features/football/data/models/stadiums_model.dart';
-import 'package:training_tasks/features/football/data/models/teams_model.dart';
-import 'package:training_tasks/features/football/data/models/tvchannels_model.dart';
-import 'package:training_tasks/features/football/domain/entities/football_entity.dart';
+import '../../domain/entities/football_entity.dart';
+import 'groups_model.dart';
+import 'knockout_model.dart';
+import 'stadiums_model.dart';
+import 'teams_model.dart';
+import 'tvchannels_model.dart';
 
 class FootballModel extends FootballEntity {
   const FootballModel(

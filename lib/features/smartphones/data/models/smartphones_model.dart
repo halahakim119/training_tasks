@@ -1,5 +1,5 @@
-import 'package:training_tasks/features/smartphones/data/models/products_model.dart';
-import 'package:training_tasks/features/smartphones/domain/entities/smartphones_entity.dart';
+import '../../domain/entities/smartphones_entity.dart';
+import 'products_model.dart';
 
 class SmartphonesModel extends SmartphonesEntity {
   const SmartphonesModel({List<ProductsModel>? products})

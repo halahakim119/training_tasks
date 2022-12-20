@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:training_tasks/features/jewelery/domain/entities/rating_entity.dart';
+
+import '../../../domain/entities/rating_entity.dart';
 
 class AllJeweleryWidget extends StatelessWidget {
   final int? id;
@@ -10,7 +11,7 @@ class AllJeweleryWidget extends StatelessWidget {
   final String? image;
   final RatingEntity? rating;
 
-  AllJeweleryWidget(
+   AllJeweleryWidget(
       {super.key,
       this.id,
       this.title,

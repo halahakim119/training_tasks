@@ -1,5 +1,5 @@
-import 'package:training_tasks/features/football/data/models/matches_model.dart';
-import 'package:training_tasks/features/football/domain/entities/round_entity.dart';
+import '../../domain/entities/round_entity.dart';
+import 'matches_model.dart';
 
 class RoundModel extends RoundEntity {
   const RoundModel({

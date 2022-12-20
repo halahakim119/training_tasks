@@ -1,5 +1,5 @@
-import 'package:training_tasks/features/football/data/models/football_Model.dart';
-import 'package:training_tasks/features/football/domain/entities/football_main_entity.dart';
+import '../../domain/entities/football_main_entity.dart';
+import 'football_Model.dart';
 
 class FootballMainModel extends FootballMainEntity {
   const FootballMainModel({FootballModel? football})

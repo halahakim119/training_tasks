@@ -1,5 +1,5 @@
-import 'package:training_tasks/features/football/data/models/matches_model.dart';
-import 'package:training_tasks/features/football/domain/entities/groups_details_entity.dart';
+import '../../domain/entities/groups_details_entity.dart';
+import 'matches_model.dart';
 
 class GroupsDetailsModel extends GroupsDetailsEntity {
   const GroupsDetailsModel({

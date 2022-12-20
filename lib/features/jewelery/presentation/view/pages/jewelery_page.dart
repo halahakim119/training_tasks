@@ -1,10 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import 'dart:math' as math;
-
-import 'package:training_tasks/features/jewelery/presentation/logic/cubit/jewelery_cubit.dart';
-import 'package:training_tasks/features/jewelery/presentation/view/widgets/all_jewelery_widget.dart';
+import '../../logic/cubit/jewelery_cubit.dart';
+import '../widgets/all_jewelery_widget.dart';
 
 class JeweleryPage extends StatelessWidget {
   const JeweleryPage({super.key});
@@ -12,7 +10,7 @@ class JeweleryPage extends StatelessWidget {
   Widget build(BuildContext context) {
     BlocProvider.of<JeweleryCubit>(context).fetchData();
     return Scaffold(
-      appBar: AppBar(title: Text('jewelery shop')),
+      appBar: AppBar(title: const Text('jewelery shop')),
       body: BlocConsumer<JeweleryCubit, JeweleryState>(
           listener: (context, state) {
         state.maybeWhen(

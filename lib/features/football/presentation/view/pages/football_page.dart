@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import 'dart:math' as math;
-
-import 'package:training_tasks/features/football/presentation/logic/cubit/football_main_cubit.dart';
+import '../../logic/cubit/football_main_cubit.dart';
 
 class FootballPage extends StatelessWidget {
   @override

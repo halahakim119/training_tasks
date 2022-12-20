@@ -1,5 +1,5 @@
-import 'package:training_tasks/features/football/data/models/round_model.dart';
-import 'package:training_tasks/features/football/domain/entities/knockout_entity.dart';
+import '../../domain/entities/knockout_entity.dart';
+import 'round_model.dart';
 
 class KnockoutModel extends KnockoutEntity {
   const KnockoutModel({

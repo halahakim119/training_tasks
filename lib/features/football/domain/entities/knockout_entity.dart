@@ -1,5 +1,6 @@
 import 'package:equatable/equatable.dart';
-import 'package:training_tasks/features/football/domain/entities/round_entity.dart';
+
+import 'round_entity.dart';
 
 class KnockoutEntity extends Equatable {
   final RoundEntity? round16;

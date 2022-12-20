@@ -1,4 +1,4 @@
-import 'package:training_tasks/features/football/domain/entities/stadiums_entity.dart';
+import '../../domain/entities/stadiums_entity.dart';
 
 class StadiumsModel extends StadiumsEntity {
   const StadiumsModel({
