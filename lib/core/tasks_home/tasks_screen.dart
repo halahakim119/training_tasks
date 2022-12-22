@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
-
+import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../features/albums/presentation/view/pages/albums_page.dart';
+import '../../features/albums/presentation/view/pages/all_albums_Page.dart';
+import '../../injection_container.dart' as di;
+import '../../features/albums/presentation/logic/cubit/albums_cubit.dart';
+// import '../../features/albums/presentation/view/pages/albums_page.dart';
 import '../../features/articles/presentation/view/pages/articles_page.dart';
 import '../../features/cars/presentation/view/pages/cars_pages.dart';
 import '../../features/football/presentation/view/pages/football_page.dart';
@@ -34,15 +38,19 @@ class TasksScreen extends StatelessWidget {
               ElevatedButton(
                 child: const Text("albums"),
                 onPressed: () {
-                  Navigator.of(context)
-                      .push(MaterialPageRoute(builder: (_) => AlbumsPage()));
+                  // BlocProvider(create: (context) => di.sl<AlbumsCubit>());
+                  // BlocProvider.of<AlbumsCubit>(context).fetchData();
+                  // Navigator.of(context)
+                  //     .push(MaterialPageRoute(builder: (_) => AlbumsPage()));
+                  Navigator.pushNamed(context, '/third');
                 },
               ),
               ElevatedButton(
                 child: const Text("football"),
                 onPressed: () {
-                  Navigator.of(context)
-                      .push(MaterialPageRoute(builder: (_) => FootballPage()));
+                  Navigator.pushNamed(context, '/second');
+                  // Navigator.of(context)
+                  //     .push(MaterialPageRoute(builder: (_) => FootballPage()));
                 },
               ),
               ElevatedButton(
@@ -113,5 +121,23 @@ class TasksScreen extends StatelessWidget {
         ),
       ),
     );
+  }
+}
+
+class AppRouter {
+  Route? onGenerateRoute(RouteSettings settings) {
+    switch (settings.name) {
+      case '/':
+        return MaterialPageRoute(builder: (_) => TasksScreen());
+      case '/second':
+        return MaterialPageRoute(builder: (_) => FootballPage());
+      case '/third':
+        return MaterialPageRoute(
+          builder: (_) => AllAlbumsPage(),
+        );
+
+      default:
+        return null;
+    }
   }
 }

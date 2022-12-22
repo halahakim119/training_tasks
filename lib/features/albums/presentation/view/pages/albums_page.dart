@@ -7,19 +7,14 @@ import '../widgets/albums_widget.dart';
 class AlbumsPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    BlocProvider.of<AlbumsCubit>(context).fetchData();
     return Scaffold(
-      appBar: AppBar(title: const Text('albums')),
-      body: BlocConsumer<AlbumsCubit, AlbumsState>(listener: (context, state) {
-        state.maybeWhen(
-            error: (error) {
-              ScaffoldMessenger.of(context)
-                  .showSnackBar(SnackBar(content: Text(error)));
-            },
-            orElse: () {});
-      }, builder: (context, state) {
-        return Scaffold(
-          body: state.when(
+      appBar: AppBar(
+        title: const Text('albums'),
+      ),
+      body: BlocBuilder<AlbumsCubit, AlbumsState>(
+        builder: (context, state) {
+          return Scaffold(
+              body: state.when(
             loading: () => const Center(
               child: CircularProgressIndicator(),
             ),
@@ -29,11 +24,11 @@ class AlbumsPage extends StatelessWidget {
                 shrinkWrap: true,
                 itemBuilder: (context, index) {
                   return AlbumsWidget(
-                      userId: data[index].userId,
-                      id: data[index].id,
-                      title: data[index].title);
+                      userId: data.albums![index].userId,
+                      id: data.albums![index].id,
+                      title: data.albums![index].title);
                 },
-                itemCount: data.length,
+                itemCount: data.albums!.length,
                 separatorBuilder: (BuildContext context, _) {
                   return const Divider();
                 },
@@ -42,9 +37,9 @@ class AlbumsPage extends StatelessWidget {
             error: (error) => Center(
               child: Text(error.toString()),
             ),
-          ),
-        );
-      }),
+          ));
+        },
+      ),
     );
   }
 }

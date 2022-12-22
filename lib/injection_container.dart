@@ -1,9 +1,10 @@
 import 'package:get_it/get_it.dart';
+import 'package:training_tasks/core/tasks_home/tasks_screen.dart';
 import 'package:training_tasks/features/random_joke/domain/repositories/randome_joke_repository_domain.dart';
 
 import 'features/albums/data/datasources/albums_data_source.dart';
-import 'features/albums/data/repositories/albums_repository_data.dart';
-import 'features/albums/domain/repositories/albums_repository_domain.dart';
+import 'features/albums/data/repositories/albums_repository_impl.dart';
+import 'features/albums/domain/repositories/albums_repository.dart';
 import 'features/albums/domain/usecases/get_all_data_usecase.dart' as albums;
 import 'features/albums/presentation/logic/cubit/albums_cubit.dart';
 import 'features/articles/data/datasources/articles_data_source.dart';
@@ -108,8 +109,8 @@ Future<void> init() async {
   sl.registerLazySingleton(
       () => albums.GetAllDataUsecase(albumsRepositoryDomain: sl()));
 // Repository
-  sl.registerLazySingleton<AlbumsRepositoryDomain>(
-      () => AlbumsRepositoryData(albumsDataSource: sl()));
+  sl.registerLazySingleton<AlbumsRepository>(
+      () => AlbumsRepositoryImpl(albumsDataSource: sl()));
 // data sources
   sl.registerLazySingleton<AlbumsDataSource>(
     () => AlbumsDataSourceImpl(),
@@ -170,4 +171,7 @@ Future<void> init() async {
   sl.registerLazySingleton<SmartphonesDataSource>(
     () => SmartphonesDataSourceImpl(),
   );
+
+//!Routers
+  sl.registerSingleton<AppRouter>(AppRouter());
 }

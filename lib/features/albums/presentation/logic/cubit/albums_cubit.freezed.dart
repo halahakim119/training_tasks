@@ -19,21 +19,21 @@ mixin _$AlbumsState {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() loading,
-    required TResult Function(List<AlbumsEntity> albums) loaded,
+    required TResult Function(AllAlbumsEntity albums) loaded,
     required TResult Function(String error) error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? loading,
-    TResult? Function(List<AlbumsEntity> albums)? loaded,
+    TResult? Function(AllAlbumsEntity albums)? loaded,
     TResult? Function(String error)? error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? loading,
-    TResult Function(List<AlbumsEntity> albums)? loaded,
+    TResult Function(AllAlbumsEntity albums)? loaded,
     TResult Function(String error)? error,
     required TResult orElse(),
   }) =>
@@ -118,7 +118,7 @@ class _$_Loading implements _Loading {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() loading,
-    required TResult Function(List<AlbumsEntity> albums) loaded,
+    required TResult Function(AllAlbumsEntity albums) loaded,
     required TResult Function(String error) error,
   }) {
     return loading();
@@ -128,7 +128,7 @@ class _$_Loading implements _Loading {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? loading,
-    TResult? Function(List<AlbumsEntity> albums)? loaded,
+    TResult? Function(AllAlbumsEntity albums)? loaded,
     TResult? Function(String error)? error,
   }) {
     return loading?.call();
@@ -138,7 +138,7 @@ class _$_Loading implements _Loading {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? loading,
-    TResult Function(List<AlbumsEntity> albums)? loaded,
+    TResult Function(AllAlbumsEntity albums)? loaded,
     TResult Function(String error)? error,
     required TResult orElse(),
   }) {
@@ -192,7 +192,7 @@ abstract class _$$_LoadedCopyWith<$Res> {
   factory _$$_LoadedCopyWith(_$_Loaded value, $Res Function(_$_Loaded) then) =
       __$$_LoadedCopyWithImpl<$Res>;
   @useResult
-  $Res call({List<AlbumsEntity> albums});
+  $Res call({AllAlbumsEntity albums});
 }
 
 /// @nodoc
@@ -209,9 +209,9 @@ class __$$_LoadedCopyWithImpl<$Res>
   }) {
     return _then(_$_Loaded(
       null == albums
-          ? _value._albums
+          ? _value.albums
           : albums // ignore: cast_nullable_to_non_nullable
-              as List<AlbumsEntity>,
+              as AllAlbumsEntity,
     ));
   }
 }
@@ -219,14 +219,10 @@ class __$$_LoadedCopyWithImpl<$Res>
 /// @nodoc
 
 class _$_Loaded implements _Loaded {
-  const _$_Loaded(final List<AlbumsEntity> albums) : _albums = albums;
+  const _$_Loaded(this.albums);
 
-  final List<AlbumsEntity> _albums;
   @override
-  List<AlbumsEntity> get albums {
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_albums);
-  }
+  final AllAlbumsEntity albums;
 
   @override
   String toString() {
@@ -238,12 +234,11 @@ class _$_Loaded implements _Loaded {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_Loaded &&
-            const DeepCollectionEquality().equals(other._albums, _albums));
+            (identical(other.albums, albums) || other.albums == albums));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(_albums));
+  int get hashCode => Object.hash(runtimeType, albums);
 
   @JsonKey(ignore: true)
   @override
@@ -255,7 +250,7 @@ class _$_Loaded implements _Loaded {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() loading,
-    required TResult Function(List<AlbumsEntity> albums) loaded,
+    required TResult Function(AllAlbumsEntity albums) loaded,
     required TResult Function(String error) error,
   }) {
     return loaded(albums);
@@ -265,7 +260,7 @@ class _$_Loaded implements _Loaded {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? loading,
-    TResult? Function(List<AlbumsEntity> albums)? loaded,
+    TResult? Function(AllAlbumsEntity albums)? loaded,
     TResult? Function(String error)? error,
   }) {
     return loaded?.call(albums);
@@ -275,7 +270,7 @@ class _$_Loaded implements _Loaded {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? loading,
-    TResult Function(List<AlbumsEntity> albums)? loaded,
+    TResult Function(AllAlbumsEntity albums)? loaded,
     TResult Function(String error)? error,
     required TResult orElse(),
   }) {
@@ -321,9 +316,9 @@ class _$_Loaded implements _Loaded {
 }
 
 abstract class _Loaded implements AlbumsState {
-  const factory _Loaded(final List<AlbumsEntity> albums) = _$_Loaded;
+  const factory _Loaded(final AllAlbumsEntity albums) = _$_Loaded;
 
-  List<AlbumsEntity> get albums;
+  AllAlbumsEntity get albums;
   @JsonKey(ignore: true)
   _$$_LoadedCopyWith<_$_Loaded> get copyWith =>
       throw _privateConstructorUsedError;
@@ -392,7 +387,7 @@ class _$_Error implements _Error {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() loading,
-    required TResult Function(List<AlbumsEntity> albums) loaded,
+    required TResult Function(AllAlbumsEntity albums) loaded,
     required TResult Function(String error) error,
   }) {
     return error(this.error);
@@ -402,7 +397,7 @@ class _$_Error implements _Error {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? loading,
-    TResult? Function(List<AlbumsEntity> albums)? loaded,
+    TResult? Function(AllAlbumsEntity albums)? loaded,
     TResult? Function(String error)? error,
   }) {
     return error?.call(this.error);
@@ -412,7 +407,7 @@ class _$_Error implements _Error {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? loading,
-    TResult Function(List<AlbumsEntity> albums)? loaded,
+    TResult Function(AllAlbumsEntity albums)? loaded,
     TResult Function(String error)? error,
     required TResult orElse(),
   }) {

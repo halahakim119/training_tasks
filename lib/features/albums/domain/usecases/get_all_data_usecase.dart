@@ -1,15 +1,15 @@
 import 'package:dartz/dartz.dart';
 
 import '/core/error/failure.dart';
-import '../entities/albums_entity.dart';
-import '../repositories/albums_repository_domain.dart';
+import '../entities/all_albums_entity.dart';
+import '../repositories/albums_repository.dart';
 
 class GetAllDataUsecase {
-  final AlbumsRepositoryDomain albumsRepositoryDomain;
+  final AlbumsRepository albumsRepositoryDomain;
 
   GetAllDataUsecase({required this.albumsRepositoryDomain});
 
-  Future<Either<Failure, List<AlbumsEntity>>> call() async {
+  Future<Either<Failure, AllAlbumsEntity>> call() async {
     return await albumsRepositoryDomain.getData();
   }
 }

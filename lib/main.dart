@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import 'core/tasks_home/tasks_screen.dart';
-import 'features/albums/presentation/logic/cubit/albums_cubit.dart';
 import 'features/articles/presentation/logic/cubit/articles_cubit.dart';
 import 'features/cars/presentation/logic/cubit/cars_cubit.dart';
 import 'features/football/presentation/logic/cubit/football_main_cubit.dart';
@@ -27,6 +26,8 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
+  final appRouter = di.sl<AppRouter>();
+
   @override
   Widget build(BuildContext context) {
     return MultiBlocProvider(
@@ -34,7 +35,6 @@ class _MyAppState extends State<MyApp> {
         BlocProvider(create: (_) => di.sl<SmartphonesCubit>()),
         BlocProvider(create: (_) => di.sl<JeweleryCubit>()),
         BlocProvider(create: (_) => di.sl<FootballMainCubit>()),
-        BlocProvider(create: (_) => di.sl<AlbumsCubit>()),
         BlocProvider(create: (_) => di.sl<ArticlesCubit>()),
         BlocProvider(create: (_) => di.sl<CarsCubit>()),
         BlocProvider(create: (_) => di.sl<UsersCubit>()),
@@ -48,7 +48,8 @@ class _MyAppState extends State<MyApp> {
           useMaterial3: true,
           primarySwatch: Colors.blue,
         ),
-        home: const TasksScreen(),
+        // home: const TasksScreen(),
+        onGenerateRoute: appRouter.onGenerateRoute,
       ),
     );
   }
