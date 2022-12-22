@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import 'core/tasks_home/tasks_screen.dart';
+import 'core/routers/app_router.dart';
 import 'features/articles/presentation/logic/cubit/articles_cubit.dart';
 import 'features/cars/presentation/logic/cubit/cars_cubit.dart';
 import 'features/football/presentation/logic/cubit/football_main_cubit.dart';

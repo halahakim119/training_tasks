@@ -1,7 +1,6 @@
 import 'package:get_it/get_it.dart';
-import 'package:training_tasks/core/tasks_home/tasks_screen.dart';
-import 'package:training_tasks/features/random_joke/domain/repositories/randome_joke_repository_domain.dart';
 
+import 'core/routers/app_router.dart';
 import 'features/albums/data/datasources/albums_data_source.dart';
 import 'features/albums/data/repositories/albums_repository_impl.dart';
 import 'features/albums/domain/repositories/albums_repository.dart';
@@ -35,6 +34,7 @@ import 'features/photo/domain/usecases/get_photo_data_usecase.dart';
 import 'features/photo/presentation/logic/cubit/photo_cubit.dart';
 import 'features/random_joke/data/datasouces/random_joke_data_source.dart';
 import 'features/random_joke/data/repositories/randome_joke_repository_data.dart';
+import 'features/random_joke/domain/repositories/randome_joke_repository_domain.dart';
 import 'features/random_joke/domain/usecases/randome_joke_usecase.dart';
 import 'features/random_joke/presentation/logic/cubit/joke_cubit.dart';
 import 'features/smartphones/data/datasources/smartphones_data_source.dart';
