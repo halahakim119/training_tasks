@@ -1,8 +1,9 @@
 import 'dart:math' as math;
-import '../../../../../injection_container.dart' as di;
+
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
+import '../../../../../injection_container.dart' as di;
 import '../../logic/cubit/articles_cubit.dart';
 import '../widgets/details.dart';
 
