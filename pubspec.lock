@@ -400,7 +400,7 @@ packages:
     source: hosted
     version: "4.0.3"
   kiwi_generator:
-    dependency: "direct main"
+    dependency: "direct dev"
     description:
       name: kiwi_generator
       url: "https://pub.dartlang.org"
