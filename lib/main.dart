@@ -35,7 +35,7 @@ class _MyAppState extends State<MyApp> {
         BlocProvider(create: (_) => di.sl<SmartphonesCubit>()),
         BlocProvider(create: (_) => di.sl<JeweleryCubit>()),
         BlocProvider(create: (_) => di.sl<FootballMainCubit>()),
-        BlocProvider(create: (_) => di.sl<ArticlesCubit>()),
+        // BlocProvider(create: (_) => di.sl<ArticlesCubit>()),
         BlocProvider(create: (_) => di.sl<CarsCubit>()),
         BlocProvider(create: (_) => di.sl<UsersCubit>()),
         BlocProvider(create: (_) => di.sl<PhotoCubit>()),

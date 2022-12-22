@@ -2,9 +2,6 @@ import 'dart:convert';
 
 import 'package:http/http.dart' as http;
 
-import '../../../../core/error/exception.dart';
-import '../models/all_albums_model.dart';
-
 abstract class AlbumsDataSource {
   Future getAlbums();
 }

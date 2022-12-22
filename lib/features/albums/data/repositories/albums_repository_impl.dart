@@ -2,12 +2,12 @@ import 'dart:async';
 
 import 'package:dartz/dartz.dart';
 
-import '../models/all_albums_model.dart';
 import '/core/error/exception.dart';
 import '/core/error/failure.dart';
 import '../../domain/entities/all_albums_entity.dart';
 import '../../domain/repositories/albums_repository.dart';
 import '../datasources/albums_data_source.dart';
+import '../models/all_albums_model.dart';
 
 class AlbumsRepositoryImpl implements AlbumsRepository {
   final AlbumsDataSource albumsDataSource;
