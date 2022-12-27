@@ -17,7 +17,7 @@ class ArticlesRepositoryData implements ArticlesRepositoryDomain {
   Future<Either<Failure, ArticlesMainEntity>> getData() async {
     try {
       final data = await articlesDataSource.getArticles();
-       final ArticlesMainModel result = ArticlesMainModel.fromJson(data);
+      final ArticlesMainModel result = ArticlesMainModel.fromJson(data);
       return Right(result);
     } on ServerException {
       return Left(ServerFailure());

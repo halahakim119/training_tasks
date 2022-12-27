@@ -1,6 +1,7 @@
 import 'package:bloc/bloc.dart';
 import 'package:flutter/material.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:injectable/injectable.dart';
 
 import '../../../../../core/error/failure.dart';
 import '../../../../../core/strings/strings.dart';
@@ -9,7 +10,7 @@ import '../../../domain/usecases/get_all_articles_data_usecase.dart';
 
 part 'articles_cubit.freezed.dart';
 part 'articles_state.dart';
-
+@injectable
 class ArticlesCubit extends Cubit<ArticlesState> {
   final GetAllArticlesDataUsecase getData;
   ArticlesCubit({required this.getData}) : super(ArticlesState.loading());

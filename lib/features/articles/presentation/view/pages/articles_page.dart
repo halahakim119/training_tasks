@@ -2,8 +2,9 @@ import 'dart:math' as math;
 
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:get_it/get_it.dart';
 
-import '../../../../../injection_container.dart' as di;
+// import '../../../../../injection_container.dart' as di;
 import '../../logic/cubit/articles_cubit.dart';
 import '../widgets/details.dart';
 
@@ -11,7 +12,8 @@ class ArticlesPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (_) => di.sl<ArticlesCubit>()..fetchData(),
+      // create: (_) => di.sl<ArticlesCubit>()..fetchData(),
+      create: (_) => GetIt.instance.get<ArticlesCubit>()..fetchData(),
       child: BlocBuilder<ArticlesCubit, ArticlesState>(
         builder: (context, state) {
           return Scaffold(

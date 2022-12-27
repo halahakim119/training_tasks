@@ -89,19 +89,19 @@ Future<void> init() async {
     () => CarsDataSourceImpl(),
   );
 
-  //! Features - Articles
-// Bloc
-  sl.registerFactory(() => ArticlesCubit(getData: sl()));
-// Usecases
-  sl.registerLazySingleton(
-      () => GetAllArticlesDataUsecase(articlesRepositoryDomain: sl()));
-// Repository
-  sl.registerLazySingleton<ArticlesRepositoryDomain>(
-      () => ArticlesRepositoryData(articlesDataSource: sl()));
-  // data sources
-  sl.registerLazySingleton<ArticlesDataSource>(
-    () => ArticlesDataSourceImpl(),
-  );
+//   //! Features - Articles
+// // Bloc
+//   sl.registerFactory(() => ArticlesCubit(getData: sl()));
+// // Usecases
+//   sl.registerLazySingleton(
+//       () => GetAllArticlesDataUsecase(articlesRepositoryDomain: sl()));
+// // Repository
+//   sl.registerLazySingleton<ArticlesRepositoryDomain>(
+//       () => ArticlesRepositoryData(articlesDataSource: sl()));
+//   // data sources
+//   sl.registerLazySingleton<ArticlesDataSource>(
+//     () => ArticlesDataSourceImpl(),
+//   );
   //! Features - Albums
 // Bloc
   sl.registerFactory(() => AlbumsCubit(getData: sl()));
