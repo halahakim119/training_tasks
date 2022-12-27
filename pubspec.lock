@@ -357,13 +357,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "4.0.2"
-  internet_connection_checker:
+  injectable:
     dependency: "direct main"
     description:
-      name: internet_connection_checker
+      name: injectable
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "1.0.0+1"
+    version: "2.1.0"
   intl:
     dependency: transitive
     description:
@@ -392,20 +392,6 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "4.7.0"
-  kiwi:
-    dependency: "direct main"
-    description:
-      name: kiwi
-      url: "https://pub.dartlang.org"
-    source: hosted
-    version: "4.0.3"
-  kiwi_generator:
-    dependency: "direct dev"
-    description:
-      name: kiwi_generator
-      url: "https://pub.dartlang.org"
-    source: hosted
-    version: "4.0.3"
   lints:
     dependency: transitive
     description:
@@ -665,13 +651,6 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.0.3"
-  shimmer:
-    dependency: "direct main"
-    description:
-      name: shimmer
-      url: "https://pub.dartlang.org"
-    source: hosted
-    version: "2.0.0"
   sky_engine:
     dependency: transitive
     description: flutter

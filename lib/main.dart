@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-
+import 'package:injectable/injectable.dart';
 import 'core/routers/app_router.dart';
-import 'features/articles/presentation/logic/cubit/articles_cubit.dart';
 import 'features/cars/presentation/logic/cubit/cars_cubit.dart';
 import 'features/football/presentation/logic/cubit/football_main_cubit.dart';
 import 'features/jewelery/presentation/logic/cubit/jewelery_cubit.dart';
@@ -35,7 +34,6 @@ class _MyAppState extends State<MyApp> {
         BlocProvider(create: (_) => di.sl<SmartphonesCubit>()),
         BlocProvider(create: (_) => di.sl<JeweleryCubit>()),
         BlocProvider(create: (_) => di.sl<FootballMainCubit>()),
-        // BlocProvider(create: (_) => di.sl<ArticlesCubit>()),
         BlocProvider(create: (_) => di.sl<CarsCubit>()),
         BlocProvider(create: (_) => di.sl<UsersCubit>()),
         BlocProvider(create: (_) => di.sl<PhotoCubit>()),
